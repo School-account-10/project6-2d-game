@@ -1,4 +1,5 @@
 ** goals **
 - multi game ui
-- user can choice between game 1 Dino jump
+- user can choice between games Dino jump, math game
+
 
