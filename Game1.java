@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Game1 {
     public static void main(String[] args) {
+        System.out.print("\u001B[32m");
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
