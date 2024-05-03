@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Game2 extends JFrame implements KeyListener {
-    private static int current_speed = 60;
+    private static int CURRENT_SPEED = 60;
     private static final int WIDTH = 40;
     private static final int HEIGHT = 20;
     private static final int PIPE_WIDTH = 3;
