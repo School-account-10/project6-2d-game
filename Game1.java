@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Game1 {
     public static void main(String[] args) {
         System.out.print("\u001B[32m");
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);// error with scanner  but prob a glitch because its being used lol
         Random random = new Random();
 
         System.out.println("Multiplication Table Game");

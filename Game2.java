@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class Game2 extends JFrame implements KeyListener {
+    private static int current_speed = 60;
     private static final int WIDTH = 40;
     private static final int HEIGHT = 20;
     private static final int PIPE_WIDTH = 3;
@@ -44,7 +45,7 @@ public class Game2 extends JFrame implements KeyListener {
         new Thread(() -> {
             while (true) {
                 try {
-                    Thread.sleep(100); // Adjust the speed of the game
+                    Thread.sleep(current_speed); // Adjust the speed of the game
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -52,6 +53,7 @@ public class Game2 extends JFrame implements KeyListener {
                 move();
                 if (pipePos == birdPos) {
                     score++;
+                    current_speed--;
                 }
                 checkCollision();
                 updateGrid();
@@ -88,6 +90,7 @@ public class Game2 extends JFrame implements KeyListener {
                 && (birdPos < gapPos || birdPos >= gapPos + PIPE_GAP)) {
             System.out.println("Game Over!");
             System.out.println("Your score: " + score);
+            System.out.println("your speed: "+ current_speed);
             System.exit(0);
         }
     }
@@ -112,8 +115,8 @@ public class Game2 extends JFrame implements KeyListener {
             birdPos -= 2; // Flap upwards
         }
     }
-
     public static void main(String[] args) {
         new Game2();
+
     }
 }
