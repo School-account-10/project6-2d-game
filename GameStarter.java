@@ -5,8 +5,8 @@ import java.util.InputMismatchException; // if theres a letter input
 public class GameStarter {
     public static void main(String[] args) {
         System.out.println(" Choose a game between 1-2 ");
-        System.out.println("Game_1: Dino Game But in terminal");
-        System.out.println("Game_2: Multiplication Table game  ");
+        System.out.println("Game_1: Multiplication Table game");
+        System.out.println("Game_2: Flapybirb without gravity..hahaha tamad ");
         Scanner UserInput = new Scanner(System.in);
         while (true) {
             try {
