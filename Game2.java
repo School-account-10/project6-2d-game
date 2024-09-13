@@ -45,7 +45,7 @@ public class Game2 extends JFrame implements KeyListener {
         new Thread(() -> {
             while (true) {
                 try {
-                    Thread.sleep(current_speed); // Adjust the speed of the game
+                    Thread.sleep(CURRENT_SPEED); // Adjust the speed of the game
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -53,7 +53,7 @@ public class Game2 extends JFrame implements KeyListener {
                 move();
                 if (pipePos == birdPos) {
                     score++;
-                    current_speed--;
+                    CURRENT_SPEED--;
                 }
                 checkCollision();
                 updateGrid();
@@ -90,13 +90,14 @@ public class Game2 extends JFrame implements KeyListener {
                 && (birdPos < gapPos || birdPos >= gapPos + PIPE_GAP)) {
             System.out.println("Game Over!");
             System.out.println("Your score: " + score);
-            System.out.println("your speed: "+ current_speed);
+            System.out.println("your speed: " + CURRENT_SPEED );
             System.exit(0);
         }
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+    }
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -108,13 +109,15 @@ public class Game2 extends JFrame implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {}
+    public void keyReleased(KeyEvent e) {
+    }
 
     private void flap() {
         if (birdPos > 0) {
             birdPos -= 2; // Flap upwards
         }
     }
+
     public static void main(String[] args) {
         new Game2();
 
